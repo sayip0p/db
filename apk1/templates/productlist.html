@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6 font-sans min-h-screen">
+
+    <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">🛍️ Product List</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        {% for product in products %}
+        <div class="bg-white rounded-xl shadow-md hover:shadow-lg overflow-hidden transition-transform transform hover:-translate-y-1">
+            {% if product.image %}
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="w-full h-48 object-contain bg-gray-50 p-4">
+            {% else %}
+                <img src="https://via.placeholder.com/300x180?text=No+Image" alt="No Image" class="w-full h-48 object-contain bg-gray-50 p-4">
+            {% endif %}
+            
+            <div class="p-5">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">{{ product.name }}</h3>
+                <p class="text-sm text-gray-600 mb-1"><strong>Brand:</strong> {{ product.brand }}</p>
+                <p class="text-sm text-gray-600 mb-4"><strong>Price:</strong> ₹{{ product.price }}</p>
+                <div class="flex flex-wrap gap-2">
+                    <a href="{% url 'editproduct' product.id %}" class="px-4 py-2 bg-blue-500 text-white text-sm rounded hover:bg-blue-600">Edit</a>
+                    <a href="{% url 'deleteproduct' product.id %}" class="px-4 py-2 bg-red-500 text-white text-sm rounded hover:bg-red-600">Delete</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</body>
+</html>

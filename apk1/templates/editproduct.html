@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Product</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+    <div class="bg-white p-8 rounded-xl shadow-md w-full max-w-md">
+        <h2 class="text-2xl font-semibold text-center text-blue-600 mb-6">Edit Product</h2>
+        <form method="POST" enctype="multipart/form-data" class="space-y-5">
+            {% csrf_token %}
+
+            <div>
+                <label class="block font-medium text-gray-700 mb-1">Product Name</label>
+                <input type="text" name="name" value="{{ pr.name }}" required
+                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+
+            <div>
+                <label class="block font-medium text-gray-700 mb-1">Price</label>
+                <input type="number" name="price" value="{{ pr.price }}" required
+                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+
+            <div>
+                <label class="block font-medium text-gray-700 mb-1">Brand</label>
+                <input type="text" name="brand" value="{{ pr.brand }}" required
+                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+
+            <div>
+                <label class="block font-medium text-gray-700 mb-1">Product Image</label>
+                {% if pr.image %}
+                    <img src="{{ pr.image.url }}" alt="Product Image" class="mb-2 h-32 w-auto rounded">
+                {% endif %}
+                <input type="file" name="image"
+                       class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+
+            <div>
+                <button type="submit"
+                        class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-200">
+                    Save Changes
+                </button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="bg-blue-600 p-4 text-white shadow">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-semibold">Admin Dashboard</h1>
+            <a href="/" class="text-sm hover:underline">Logout</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto mt-10 px-4">
+
+        <!-- Welcome Message -->
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-bold text-gray-800 mb-2">Welcome, Admin 👋</h2>
+            <p class="text-gray-600">Manage products, users, and view reports from here.</p>
+        </div>
+
+        <!-- Dashboard Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            <!-- Products -->
+            <div class="bg-white shadow rounded-xl p-6 text-center">
+                <h3 class="text-xl font-semibold mb-2">🛍️ Products</h3>
+                <p class="text-gray-600">Add, edit or delete products.</p>
+                <a href="{% url 'productlist' %}"
+                    class="inline-block mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Manage</a>
+            </div>
+
+            <!-- Users -->
+            <div class="bg-white shadow rounded-xl p-6 text-center">
+                <h3 class="text-xl font-semibold mb-2">👤 Users</h3>
+                <p class="text-gray-600">View and manage user accounts.</p>
+                <a href="/admin_users/"
+                    class="inline-block mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">View</a>
+            </div>
+
+            <!-- Reports -->
+            <div class="bg-white shadow rounded-xl p-6 text-center">
+                <h3 class="text-xl font-semibold mb-2">📊 Reports</h3>
+                <p class="text-gray-600">Sales and activity reports.</p>
+                <a href="#"
+                    class="inline-block mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Analyze</a>
+            </div>
+
+            <!-- Feedback -->
+            <div class="bg-white shadow rounded-xl p-6 text-center">
+                <h3 class="text-xl font-semibold mb-2">📝 Feedback</h3>
+                <p class="text-gray-600">View and manage customer feedbacks.</p>
+                <a href="{% url 'feedback_review' %}"
+                    class="inline-block mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Review</a>
+            </div>
+
+        </div>
+
+
+    </main>
+</body>
+
+</html>

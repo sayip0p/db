@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Restaurants</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #34495e;
+            padding: 30px 0;
+            text-align: center;
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card h3 {
+            margin: 0;
+            font-size: 1.4rem;
+            color: #2c3e50;
+        }
+
+        .card h3 a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .card h3 a:hover {
+            color: #3498db;
+        }
+
+        .card p {
+            margin-top: 10px;
+            color: #7f8c8d;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 24px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-link:hover {
+            background-color: #2980b9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            color: #aaa;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>🍽️ Our Top Restaurants</header>
+
+    <div class="container">
+        <div class="grid">
+            <div class="card">
+                <img src="https://wallpapercat.com/w/full/e/f/6/78686-3840x2160-desktop-4k-pizza-wallpaper-image.jpg" alt="Pizza Palace" />
+                <div class="card-content">
+                    <h3><a href="/pizza_palace/">Pizza Palace</a></h3>
+                    <p>Authentic Italian-style pizza with fresh ingredients.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bm9vZGxlc3xlbnwwfHwwfHx8MA%3D%3D" alt="Noodle Nirvana" />
+                <div class="card-content">
+                    <h3><a href="/noodle_nirvana/">Noodle Nirvana</a></h3>
+                    <p>Delicious ramen and stir-fried noodle bowls.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images6.alphacoders.com/831/831475.jpg" alt="Burger King" />
+                <div class="card-content">
+                    <h3><a href="/burger_king/">Burger King</a></h3>
+                    <p>Juicy handcrafted burgers and crispy fries.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://t3.ftcdn.net/jpg/05/85/23/18/360_F_585231815_oPKWHSUVZTi0oYHw8214PPbXQZEGi0kF.jpg" alt="Yemani Mandhi" />
+                <div class="card-content">
+                    <h3><a href="/yemeni_mandhi/">Yemani Mandhi</a></h3>
+                    <p>Flavourful rice, delicious beef rib, and chicken mandhi.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://t4.ftcdn.net/jpg/09/12/10/25/360_F_912102578_dpR2r8IstjbBzQWgn2dAegf6SE2gDPNT.jpg" alt="Green Garden" />
+                <div class="card-content">
+                    <h3><a href="/green_garden/">Green Garden</a></h3>
+                    <p>Healthy vegan and vegetarian meal options.</p>
+                </div>
+            </div>
+        </div>
+
+        <a href="/home/" class="back-link">Back</a>
+    </div>
+
+    <footer>© 2025 YourWebsite. All rights reserved.</footer>
+</body>
+</html>

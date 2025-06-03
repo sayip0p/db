@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Roboto', sans-serif;
+      background: url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW1ucDE5bG1mMmgybDk4a242YjJ5dmZ0M2EzNGlpam00MTd3YzgzaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UNdMIImQo9xXt477Xf/giphy.gif') 
+                  no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .form-container {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .form-box {
+      background-color: rgba(0, 0, 0, 0.7); /* dark transparent overlay */
+      padding: 30px 40px;
+      border-radius: 12px;
+      width: 320px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      background-color: #2c2c2c;
+      border: none;
+      border-radius: 5px;
+      color: #e0e0e0;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #03dac6;
+      border: none;
+      color: #000;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #00bfa5;
+    }
+
+    a {
+      color: #03dac6;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <div class="form-box">
+      <h2>Registration Form</h2>
+      <form action="" method="post">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required>
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <input type="submit" value="Submit">
+      </form>
+      <br>
+      <a href="/login/">Sign in</a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!-- feedbackreview.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback Review</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen p-6">
+
+    <!-- Navbar -->
+    <nav class="bg-blue-600 p-4 text-white shadow mb-10">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-semibold">Feedback Review</h1>
+            <a href="{% url 'index' %}" class="text-sm hover:underline">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Feedback Table -->
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">📝 All Feedbacks</h2>
+
+        {% if feedbacks %}
+            <div class="overflow-x-auto bg-white shadow rounded-lg">
+                <table class="min-w-full text-sm text-left">
+                    <thead class="bg-blue-600 text-white">
+                        <tr>
+                            <th class="py-3 px-4">Feedback</th>
+                            <th class="py-3 px-4">Rating</th>
+                            <th class="py-3 px-4">Email</th>
+                            <th class="py-3 px-4">Date</th>
+                            <th class="py-3 px-4">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-700">
+                        {% for feedback in feedbacks %}
+                            <tr class="border-b hover:bg-gray-100">
+                                <td class="py-2 px-4">{{ feedback.feedback_text|truncatechars:50 }}</td>
+                                <td class="py-2 px-4">{{ feedback.rating }} ⭐</td>
+                                <td class="py-2 px-4">{{ feedback.email }}</td>
+                                <td class="py-2 px-4">{{ feedback.created_at|date:"M d, Y H:i" }}</td>
+                                <td class="py-2 px-4">
+                                    <form action="{% url 'delete_feedback' feedback.id %}" method="POST" onsubmit="return confirm('Are you sure you want to delete this feedback?');">
+                                        {% csrf_token %}
+                                        <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 text-sm">
+                                            Delete
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <p class="text-gray-600 mt-4">No feedback available yet.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

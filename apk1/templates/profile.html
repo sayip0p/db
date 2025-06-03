@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e9ecef;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .profile-card {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .profile-card h2 {
+            margin-bottom: 10px;
+            color: #343a40;
+        }
+
+        .profile-card p {
+            margin: 5px 0;
+            color: #6c757d;
+        }
+
+        .profile-card .info-label {
+            font-weight: bold;
+            color: #495057;
+        }
+
+        .logout-button {
+            margin-top: 20px;
+            background-color: #dc3545;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .logout-button:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-card">
+        <h2>{{ user.name }}</h2>
+        <p><span class="info-label">Email:</span> {{ user.email }}</p>
+        <p><span class="info-label">Password:</span> {{ user.password }}</p>
+
+        <!-- Optional: Add logout or edit profile -->
+        <a href="/home/" class="logout-button">back</a>
+        <a href="/editprofile/" class="logout-button">Edit</a>
+    </div>
+</body>
+</html>

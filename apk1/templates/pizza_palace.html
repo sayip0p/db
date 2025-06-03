@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pizza Palace</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+    .menu-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .menu-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    }
+    .hero-overlay {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+    }
+    .btn-cta {
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .btn-cta:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-red-700 to-red-500 text-white sticky top-0 z-50 shadow-lg">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center">
+        <img src="https://lh3.googleusercontent.com/proxy/kDJeG0r39UgC5dRPM5qn7slo5ri7EaOjV7fESx7ELWa3XIoyu1h0tK_4FvXFh4LZbhBJXLpYOr7aEQKFlVT3SzaRJBgydifq3lYRhG8OdRxcm9CpW79GP4LSiDNPfhAMdGlHvkPWKJ7Jxw" alt="Pizza Palace Logo" class="h-12 rounded-full mr-3" />
+        <h1 class="text-3xl font-bold tracking-tight">Pizza Palace</h1>
+      </div>
+      <ul class="flex space-x-8 text-lg">
+        <li><a href="#home" class="hover:text-yellow-300 transition duration-300">Home</a></li>
+        <li><a href="#menu" class="hover:text-yellow-300 transition duration-300">Menu</a></li>
+        <li><a href="#about" class="hover:text-yellow-300 transition duration-300">About</a></li>
+        <li><a href="#contact" class="hover:text-yellow-300 transition duration-300">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="bg-cover bg-center h-screen flex items-center justify-center" style="background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a680')">
+    <div class="text-center text-white hero-overlay p-10 rounded-xl">
+      <h2 class="text-5xl font-bold mb-4 tracking-wide">Welcome to Pizza Palace</h2>
+      <p class="text-xl mb-8 max-w-md mx-auto">Indulge in handcrafted pizzas made with love and the freshest ingredients.</p>
+      <a href="#menu" class="bg-yellow-400 text-red-800 px-8 py-4 rounded-full font-semibold text-lg btn-cta">Explore Our Menu</a>
+    </div>
+  </section>
+
+  <!-- Menu -->
+  <section id="menu" class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center text-red-700 mb-12">Our Signature Menu</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="menu-card bg-gray-50 rounded-xl overflow-hidden shadow-lg">
+          <img src="https://images.unsplash.com/photo-1571066811602-716837d330be" alt="Margherita Pizza" class="w-full h-56 object-cover" />
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold text-gray-800 mb-2">Margherita Pizza</h3>
+            <p class="text-gray-600 mb-4">Fresh tomatoes, mozzarella, basil, olive oil.</p>
+            <p class="text-red-600 font-bold text-lg">$12.99</p>
+          </div>
+        </div>
+        <div class="menu-card bg-gray-50 rounded-xl overflow-hidden shadow-lg">
+          <img src="https://images.unsplash.com/photo-1593560708920-61dd98c8a9c2" alt="Pepperoni Feast" class="w-full h-56 object-cover" />
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold text-gray-800 mb-2">Pepperoni Feast</h3>
+            <p class="text-gray-600 mb-4">Pepperoni, mozzarella, signature tomato sauce.</p>
+            <p class="text-red-600 font-bold text-lg">$14.99</p>
+          </div>
+        </div>
+        <div class="menu-card bg-gray-50 rounded-xl overflow-hidden shadow-lg">
+          <img src="https://images.unsplash.com/photo-1601924582970-9236bcb7661c" alt="Veggie Delight" class="w-full h-56 object-cover" />
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold text-gray-800 mb-2">Veggie Delight</h3>
+            <p class="text-gray-600 mb-4">Bell peppers, onions, mushrooms, olives.</p>
+            <p class="text-red-600 font-bold text-lg">$13.99</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-16 bg-gradient-to-b from-gray-100 to-gray-200">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold text-red-700 mb-8">About Pizza Palace</h2>
+      <p class="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
+        Founded in 2020, Pizza Palace is a family-owned haven for pizza lovers. Our passion for authentic Italian flavors drives us to use only the freshest ingredients, crafting each pizza with care and creativity.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center text-red-700 mb-12">Get in Touch</h2>
+      <div class="flex flex-col md:flex-row gap-12">
+        <div class="md:w-1/2 text-center">
+          <p class="text-lg text-gray-700 mb-4"><strong>Address:</strong> 1234 Flavor Street, Food City, FC 12345</p>
+          <p class="text-lg text-gray-700 mb-4"><strong>Phone:</strong> (123) 456-7890</p>
+          <p class="text-lg text-gray-700 mb-4"><strong>Email:</strong> contact@pizzapalace.com</p>
+          <p class="text-lg text-gray-700"><strong>Hours:</strong> Open Daily 11 AM - 10 PM</p>
+        </div>
+        <div class="md:w-1/2">
+          <form class="bg-gray-50 p-8 rounded-xl shadow-lg">
+            <div class="mb-4">
+              <label for="name" class="block text-gray-700 font-semibold mb-2">Name</label>
+              <input type="text" name="name" id="name" class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500" placeholder="Your Name" required />
+            </div>
+            <div class="mb-4">
+              <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+              <input type="email" name="email" id="email" class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500" placeholder="Your Email" required />
+            </div>
+            <div class="mb-4">
+              <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
+              <textarea name="message" id="message" rows="5" class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="bg-red-600 text-white px-6 py-3 rounded-full font-semibold btn-cta">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-red-700 to-red-500 text-white py-8">
+    <div class="container mx-auto px-6 text-center">
+      <p class="text-lg mb-4">© 2025 Pizza Palace. All rights reserved.</p>
+      <div class="flex justify-center space-x-6">
+        <a href="#" class="hover:text-yellow-300" aria-label="Facebook"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path></svg></a>
+        <a href="#" class="hover:text-yellow-300" aria-label="Twitter"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path></svg></a>
+        <a href="#" class="hover:text-yellow-300" aria-label="Email"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm14 2l-6 4-6-4h12zm-12 2v10h12V8l-6 4-6-4z"></path></svg></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
