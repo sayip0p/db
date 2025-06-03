@@ -1,6 +1,6 @@
 from django.urls import path, include
 from.import views
-from .views import staff_login_view, staff_dashboard, logout_view, menu_api ,yemani_staff_login_view ,yemani_dashboard ,yemani_logout_view ,yemani_menu_api ,yemeni_mandhi
+
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -40,14 +40,14 @@ urlpatterns = [
     path('pizza_palace/', views.pizza_palace, name='pizza_palace'),
     path('noodle_nirvana/', views.noodle_nirvana, name='noodle_nirvana'),
     path('burger_king/', views.burger_king, name='burger_king'),
-    path('stafflogin/', staff_login_view, name='staff_login'),
-    path('staffdashboard/', staff_dashboard, name='staff_dashboard'),
-    path('logout/', logout_view, name='logout'),
-    path('api/menu/', menu_api, name='menu_api'),
+    path('stafflogin/', views.staff_login_view, name='staff_login'),
+    path('staffdashboard/', views.staff_dashboard, name='staff_dashboard'),
+    path('logout/', views.logout_view, name='logout'),
+    path('api/menu/', views.menu_api, name='menu_api'),
     path('yemeni_mandhi/', views.yemeni_mandhi, name='yemeni_mandhi'),
-    path('yemani/login/', yemani_staff_login_view, name='yemani_login'),
-    path('yemani/dashboard/', yemani_dashboard, name='yemani_dashboard'),
-    path('yemani/logout/', yemani_logout_view, name='yemani_logout'),
-    path('yemani/menu-api/', yemani_menu_api, name='yemani_menu_api'),
+    path('yemani/login/', views.yemani_staff_login_view, name='yemani_login'),
+    path('yemani/dashboard/', views.yemani_dashboard, name='yemani_dashboard'),
+    path('yemani/logout/', views.yemani_logout_view, name='yemani_logout'),
+    path('yemani/menu-api/', views.yemani_menu_api, name='yemani_menu_api'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
